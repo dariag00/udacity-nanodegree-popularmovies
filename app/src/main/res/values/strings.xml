@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="synopsis">Synopsis:</string>
+    <string name="popularity">Popularity:</string>
+    <string name="vote_count">Vote Count:</string>
+    <string name="release_date">Release Date:</string>
+    <string name="original_title">Original Title:</string>
+    <string name="vote_count_text">%1$d votes</string>
+    <string name="order_by_popularity">Order by Popularity</string>
+    <string name="order_by_top_rated">Order by Top Rated</string>
+</resources>
