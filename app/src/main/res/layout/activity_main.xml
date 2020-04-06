@@ -17,4 +17,13 @@
         android:layout_gravity="center"
         android:visibility="invisible"/>
 
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/an_error_has_occurred_while_fetching_movies_data"
+        android:visibility="invisible"
+        android:layout_gravity="center"/>
+
 </FrameLayout>

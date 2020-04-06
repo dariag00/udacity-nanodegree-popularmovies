@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.popularmovies.http.MoviesAPI;
 import com.example.popularmovies.http.movies.Movie;
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
 
     @BindView(R.id.pb_loading_indicator)
     ProgressBar progressBar;
+
+    @BindView(R.id.tv_error)
+    TextView errorView;
 
     private MoviesAdapter moviesAdapter;
 
@@ -76,14 +80,21 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
             moviesCall.enqueue(new Callback<MovieList>() {
                 @Override
                 public void onResponse(Call<MovieList> call, Response<MovieList> response) {
-                    progressBar.setVisibility(View.INVISIBLE);
-                    List<Movie> movies = response.body().getMovieList();
-                    moviesAdapter.setMovieList(movies);
+                    if (response.code() == 200) {
+                        progressBar.setVisibility(View.INVISIBLE);
+                        List<Movie> movies = response.body().getMovieList();
+                        moviesAdapter.setMovieList(movies);
+                    }else{
+                        progressBar.setVisibility(View.INVISIBLE);
+                        errorView.setVisibility(View.VISIBLE);
+                    }
                 }
 
                 @Override
                 public void onFailure(Call<MovieList> call, Throwable t) {
                     t.printStackTrace();
+                    progressBar.setVisibility(View.INVISIBLE);
+                    errorView.setVisibility(View.VISIBLE);
                 }
             });
         }
