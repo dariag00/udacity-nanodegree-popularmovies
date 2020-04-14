@@ -2,6 +2,7 @@ package com.example.popularmovies.ui.detail;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -53,8 +54,8 @@ public class DetailsActivity extends AppCompatActivity implements TrailersAdapte
     FloatingActionButton floatingActionButton;
 
     //Error Views
-    @BindView(R.id.tv_reviews_error)
-    TextView reviewsErrorView;
+    @BindView(R.id.cv_reviews_error)
+    CardView reviewsErrorView;
     @BindView(R.id.tv_trailers_error)
     TextView trailerErrorView;
 

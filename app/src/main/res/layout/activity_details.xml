@@ -182,6 +182,7 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_reviews_error"
                     android:layout_width="match_parent"
                     card_view:cardElevation="3dp"
                     card_view:cardUseCompatPadding="true"
