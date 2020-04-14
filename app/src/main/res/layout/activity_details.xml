@@ -194,7 +194,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/cannot_fetch_reviews"
-                        android:visibility="invisible"
                         android:layout_margin="20dp"
                         android:gravity="center"/>
 
