@@ -1,4 +1,4 @@
-package com.example.popularmovies;
+package com.example.popularmovies.ui.main;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.popularmovies.http.movies.Movie;
+import com.example.popularmovies.R;
+import com.example.popularmovies.data.http.movies.Movie;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>{
 
-    List<Movie> movieList;
+    private List<Movie> movieList;
 
     private final MoviesClickListener onClickListener;
 
@@ -37,7 +38,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View view = inflater.inflate(layoutIdForListItem, parent, false);
-        return new MoviesViewHolder(view, context);
+        return new MoviesViewHolder(view);
     }
 
     @Override
@@ -58,11 +59,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
     class MoviesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @BindView(R.id.iv_movie_poster) ImageView posterImageView;
-        Context context;
 
-        public MoviesViewHolder(View itemView, Context context){
+        public MoviesViewHolder(View itemView){
             super(itemView);
-            this.context = context;
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
         }

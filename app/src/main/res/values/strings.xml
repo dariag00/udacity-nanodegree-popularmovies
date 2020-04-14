@@ -9,4 +9,9 @@
     <string name="order_by_popularity">Order by Popularity</string>
     <string name="order_by_top_rated">Order by Top Rated</string>
     <string name="an_error_has_occurred_while_fetching_movies_data">An error has occurred while fetching movies data.</string>
+    <string name="get_favorites">Get Favorites</string>
+    <string name="cannot_fetch_reviews">Cannot fetch Reviews.</string>
+    <string name="cannot_fetch_trailers_data">Cannot fetch Trailers data.</string>
+    <string name="reviews">REVIEWS:</string>
+    <string name="trailers">TRAILERS:</string>
 </resources>

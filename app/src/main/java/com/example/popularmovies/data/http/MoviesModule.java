@@ -1,4 +1,4 @@
-package com.example.popularmovies.http;
+package com.example.popularmovies.data.http;
 
 import dagger.Module;
 import dagger.Provides;
@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class MoviesModule {
 
-    public final String BASE_URL = "https://api.themoviedb.org/3/";
+    private final String BASE_URL = "https://api.themoviedb.org/3/";
 
     /*
      * It provides the HTTP Client that will be used to perform the requests

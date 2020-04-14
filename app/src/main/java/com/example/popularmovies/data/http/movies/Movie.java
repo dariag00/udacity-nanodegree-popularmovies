@@ -1,11 +1,15 @@
-package com.example.popularmovies.http.movies;
+package com.example.popularmovies.data.http.movies;
+
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.List;
 
+@Entity(tableName = "movies")
 public class Movie implements Serializable{
 
     @SerializedName("popularity")
@@ -22,6 +26,7 @@ public class Movie implements Serializable{
     private String posterPath;
     @SerializedName("id")
     @Expose
+    @PrimaryKey
     private Integer id;
     @SerializedName("adult")
     @Expose
@@ -35,9 +40,6 @@ public class Movie implements Serializable{
     @SerializedName("original_title")
     @Expose
     private String originalTitle;
-    @SerializedName("genre_ids")
-    @Expose
-    private List<Integer> genreIds = null;
     @SerializedName("title")
     @Expose
     private String title;
@@ -50,6 +52,27 @@ public class Movie implements Serializable{
     @SerializedName("release_date")
     @Expose
     private String releaseDate;
+
+    @Ignore
+    public Movie(){
+
+    }
+
+    public Movie(Double popularity, Integer voteCount, Boolean video, String posterPath, Integer id, Boolean adult, String backdropPath, String originalLanguage, String originalTitle, String title, Double voteAverage, String overview, String releaseDate) {
+        this.popularity = popularity;
+        this.voteCount = voteCount;
+        this.video = video;
+        this.posterPath = posterPath;
+        this.id = id;
+        this.adult = adult;
+        this.backdropPath = backdropPath;
+        this.originalLanguage = originalLanguage;
+        this.originalTitle = originalTitle;
+        this.title = title;
+        this.voteAverage = voteAverage;
+        this.overview = overview;
+        this.releaseDate = releaseDate;
+    }
 
     public Double getPopularity() {
         return popularity;
@@ -121,14 +144,6 @@ public class Movie implements Serializable{
 
     public void setOriginalTitle(String originalTitle) {
         this.originalTitle = originalTitle;
-    }
-
-    public List<Integer> getGenreIds() {
-        return genreIds;
-    }
-
-    public void setGenreIds(List<Integer> genreIds) {
-        this.genreIds = genreIds;
     }
 
     public String getTitle() {
